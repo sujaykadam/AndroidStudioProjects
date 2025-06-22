@@ -1,4 +1,4 @@
-package com.example.kiweysrecepies
+package com.example.sujayscolorpicker
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,25 +11,18 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import androidx.navigation.compose.rememberNavController
-import com.example.kiweysrecepies.ui.theme.KiweysRecepiesTheme
+import com.example.sujayscolorpicker.ui.theme.SujaysColorPickerTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            val navController = rememberNavController()
-            KiweysRecepiesTheme {
-                Scaffold( modifier = Modifier.fillMaxSize().padding(top = 24.dp) ) { innerPadding ->
-                    RecepieApp(
-                        modifier = Modifier.padding(innerPadding),
-                        navController = navController
-                    )
+            SujaysColorPickerTheme {
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    ColorPicker()
                 }
             }
         }
     }
 }
-
